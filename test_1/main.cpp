@@ -1,3 +1,4 @@
+#if 0
 #include <QApplication>
 #include <QDialog>
 #include <QLabel>
@@ -14,7 +15,9 @@ int main(int argc, char *argv[])
     a.installTranslator(&tsor);
 
     QDialog w;
+    w.resize(400,300);
     QLabel label(&w);
+    label.move(120,120);
     if(argc == 2)
         label.setText(argv[1]);
     else
@@ -22,3 +25,15 @@ int main(int argc, char *argv[])
     w.show();
     return a.exec();
 }
+#else
+#include "ui_hellodialog.h"
+int main(int argc, char *argv[])
+{
+    QApplication a(argc,argv);
+    QDialog w;
+    Ui::HelloDialog ui;
+    ui.setupUi(&w);
+    w.show();
+    return a.exec();
+}
+#endif

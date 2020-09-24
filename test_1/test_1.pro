@@ -15,3 +15,6 @@ for(tsfile, TRANSLATIONS) {
     command = $$LRELEASE -removeidentical $$tsfile -qm $$qmfile
     system($$command)|error("Failed to run: $$command")
 }
+
+HEADERS += \
+    ui_hellodialog.h
